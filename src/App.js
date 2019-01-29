@@ -6,27 +6,23 @@ import Particles from 'react-particles-js';
 
 class App extends Component {
   render() {
-    const pStyles = {
-      zIndex: 9999,
-    }
-
     return (
       <div className="App">
         <div className="slidingBackground"></div>
         <Landing />
         <Particles 
-        style={pStyles}
+        className="particleScreen"
         params={{
           "particles": {
             "number": {
-              "value": 400,
+              "value": 165,
               "density": {
                 "enable": true,
                 "value_area": 800
               }
             },
             "color": {
-              "value": "#fff"
+              "value": "#ffffff"
             },
             "shape": {
               "type": "circle",
@@ -35,7 +31,7 @@ class App extends Component {
                 "color": "#000000"
               },
               "polygon": {
-                "nb_sides": 3
+                "nb_sides": 5
               },
               "image": {
                 "src": "img/github.svg",
@@ -44,49 +40,49 @@ class App extends Component {
               }
             },
             "opacity": {
-              "value": 0.5,
+              "value": .6,
               "random": true,
               "anim": {
-                "enable": false,
+                "enable": true,
                 "speed": 1,
-                "opacity_min": 0.1,
+                "opacity_min": 0,
                 "sync": false
               }
             },
             "size": {
-              "value": 2,
+              "value": 1,
               "random": true,
               "anim": {
                 "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
+                "speed": 4,
+                "size_min": 0.3,
                 "sync": false
               }
             },
             "line_linked": {
               "enable": false,
-              "distance": 500,
+              "distance": 150,
               "color": "#ffffff",
               "opacity": 0.4,
-              "width": 2
+              "width": 1
             },
             "move": {
               "enable": true,
               "speed": 1,
-              "direction": "bottom",
-              "random": false,
+              "direction": "none",
+              "random": true,
               "straight": false,
               "out_mode": "out",
               "bounce": false,
               "attract": {
                 "enable": false,
                 "rotateX": 600,
-                "rotateY": 1200
+                "rotateY": 600
               }
             }
           },
           "interactivity": {
-            "detect_on": "canvas",
+            "detect_on": "window",
             "events": {
               "onhover": {
                 "enable": false,
@@ -102,18 +98,18 @@ class App extends Component {
               "grab": {
                 "distance": 400,
                 "line_linked": {
-                  "opacity": 0.5
+                  "opacity": 1
                 }
               },
               "bubble": {
-                "distance": 400,
-                "size": 4,
-                "duration": 0.3,
-                "opacity": 1,
+                "distance": 250,
+                "size": 0,
+                "duration": 2,
+                "opacity": 0,
                 "speed": 3
               },
               "repulse": {
-                "distance": 200,
+                "distance": 178.6569867062961,
                 "duration": 0.4
               },
               "push": {
