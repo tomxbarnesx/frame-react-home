@@ -1,32 +1,96 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  overflow: hidden;
+  width: 100%;
+  height: 500vh;
+  font-family: Futura, sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.slidingBackground{
+  background: url("./images/frame-bg.jpg") repeat-y;
+  z-index: -1;
+  width: 100%;
+  height: 1000vh;
+  position: absolute;
+  bottom: -500vh;
+  animation: slide 250s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.topNav {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.navItem {
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 25vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.centerLogo {
+  width: 20em;
+}
+
+.logoBreak {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: -2.3em;
+  width: 19em;
+  border: 2px solid white;
+}
+
+.logoSub {
+  width: 18em;
+  margin: 0 auto;
+}
+
+.logoSub h2 {
+  margin-top: -1em
+}
+
+.landingButtons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 52vh;
+  margin: auto;
+  margin-top: 6em;
+}
+
+.signUpButton {
+  margin: 1em auto;
+  border-radius: .4em;
+  width: 13em;
+  border: 4px solid white;
+}
+
+.downPoint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 3em;
+}
+
+@keyframes slide {
+  0%{
+    transform: translate3d(0, 0, 0);
   }
-  to {
-    transform: rotate(360deg);
+  100%{
+    transform: translate3d(0, 1692px, 0); /* The image width */
   }
 }
