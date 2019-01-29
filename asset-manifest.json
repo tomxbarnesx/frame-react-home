@@ -1,7 +1,7 @@
 {
   "main.css": "/frame-react-home/static/css/main.59791973.chunk.css",
-  "main.js": "/frame-react-home/static/js/main.8bc27d3c.chunk.js",
-  "main.js.map": "/frame-react-home/static/js/main.8bc27d3c.chunk.js.map",
+  "main.js": "/frame-react-home/static/js/main.2eab48e8.chunk.js",
+  "main.js.map": "/frame-react-home/static/js/main.2eab48e8.chunk.js.map",
   "static/js/1.51819335.chunk.js": "/frame-react-home/static/js/1.51819335.chunk.js",
   "static/js/1.51819335.chunk.js.map": "/frame-react-home/static/js/1.51819335.chunk.js.map",
   "runtime~main.js": "/frame-react-home/static/js/runtime~main.c1caec55.js",
@@ -11,6 +11,6 @@
   "static/media/App.css": "/frame-react-home/static/media/6f6ccb4c.dac30a96.png",
   "static/media/downArrow.png": "/frame-react-home/static/media/downArrow.4fe9c605.png",
   "index.html": "/frame-react-home/index.html",
-  "precache-manifest.49fa828ee4b9ae551d77065da8549996.js": "/frame-react-home/precache-manifest.49fa828ee4b9ae551d77065da8549996.js",
+  "precache-manifest.cccfabba22156b13d97ceafbd27b3907.js": "/frame-react-home/precache-manifest.cccfabba22156b13d97ceafbd27b3907.js",
   "service-worker.js": "/frame-react-home/service-worker.js"
 }
