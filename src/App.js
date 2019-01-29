@@ -82,7 +82,7 @@ class App extends Component {
             }
           },
           "interactivity": {
-            "detect_on": "window",
+            "detect_on": "canvas",
             "events": {
               "onhover": {
                 "enable": false,
