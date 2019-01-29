@@ -31,6 +31,7 @@
 
 .logoContainer {
   position: absolute;
+  width: 20em;
   top: 25vh;
   left: 0;
   right: 0;

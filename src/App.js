@@ -13,6 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="slidingBackground"></div>
+        <Landing />
         <Particles 
         style={pStyles}
         params={{
@@ -125,7 +126,6 @@ class App extends Component {
           },
           "retina_detect": true
         }} />
-        <Landing />
       </div>
     );
   }
