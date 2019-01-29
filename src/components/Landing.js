@@ -5,7 +5,7 @@ import downArrow from '../images/downArrow.png';
 class Landing extends Component {
     render(){
         return (
-        <div>
+        <div className="landingContent">
             <nav className="topNav">
                 <div className="navItem"><strong>ABOUT</strong></div>
                 <div className="navItem"><strong>CONTACT</strong></div>    

@@ -8,8 +8,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="slidingBackground"></div>
         <Landing />
+        <div className="bg-fixed"></div>
         <Particles 
         className="particleScreen"
         params={{
