@@ -11,7 +11,7 @@
 }
 
 .iconContainer {
-    width: 5rem;
+    width: 7rem;
     margin-right: 1rem;
     filter: invert(100%);
 }
@@ -24,6 +24,7 @@
 .featureSub {
     width: 88%;
     margin: 0 auto;
+    margin-top: -.85rem;
 }
 
 .phone {
@@ -38,4 +39,9 @@
     right: 0;
     margin: auto;
     margin-top:1em;
+}
+
+.fadeBox {
+    width: 75%;
+    margin: 0 auto;
 }

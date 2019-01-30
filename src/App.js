@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Landing from './components/Landing';
 import Feature from './components/Feature';
+import AltFeature from './components/AltFeature';
 import Particles from 'react-particles-js';
 
 
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
         <Landing />
         <Feature />
+        <AltFeature />
         <Particles 
         className="particleScreen"
         params={{
