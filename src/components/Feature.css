@@ -1,0 +1,41 @@
+.featureSection {
+    height: 100vh;
+}
+
+.featureHeader {
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 85%;
+}
+
+.iconContainer {
+    width: 5rem;
+    margin-right: 1rem;
+    filter: invert(100%);
+}
+
+.featureTitle {
+    text-transform: uppercase;
+    font-size: 1.3em
+}
+
+.featureSub {
+    width: 88%;
+    margin: 0 auto;
+}
+
+.phone {
+    position: relative;
+    margin-top: 1.5em;
+}
+
+.demoVid {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top:1em;
+}

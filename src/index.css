@@ -10,6 +10,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url("./images/6f6ccb4c.png");
+  background-attachment: fixed; */
+  background: url("./images/6f6ccb4c.png") repeat fixed;
+  /* background-size: 100% 100vh; */
+  /* background-overflow: hidden; */
+
+  /* overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll; */
 }
 
 code {

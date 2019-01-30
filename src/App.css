@@ -3,20 +3,21 @@
   font-family: Futura, sans-serif;
   color: white;
   z-index: 1;
-  height: 500vh;
+  /* height: 500vh; */
 }
 
-.bg-fixed {
+/* .bg-fixed {
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: -1;
   background: url("./images/6f6ccb4c.png") repeat;
-}
-
-/* .landingContent {
-  pointer-events: all;
 } */
+
+.landingContent {
+  height: 100vh;
+  width: 100vw;
+}
 
 /* .slidingBackground{
   background: url("./images/6f6ccb4c.png") repeat;
@@ -43,7 +44,7 @@
 .logoContainer {
   position: absolute;
   width: 20em;
-  top: 25vh;
+  top: 15vh;
   left: 0;
   right: 0;
   margin: auto;
@@ -77,13 +78,13 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 52vh;
+  top: 23rem;
   margin: auto;
-  margin-top: 6em;
+  /* margin-top: 6em; */
 }
 
 .signUpButton {
-  margin: 1em auto;
+  margin: auto;
   border-radius: .4em;
   width: 13em;
   border: 4px solid white;
