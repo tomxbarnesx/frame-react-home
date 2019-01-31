@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/iPhoneBlankScreen.b8b07822.png"
   },
   {
-    "revision": "77ebac1eb6f1a1d6fff9",
-    "url": "/frame-react-home/static/css/main.b3b63471.chunk.css"
+    "revision": "e8d112902a937a1b61d4",
+    "url": "/frame-react-home/static/css/main.b3539c6d.chunk.css"
   },
   {
     "revision": "ddc87099843c38c4d1cc",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/downArrow.4fe9c605.png"
   },
   {
-    "revision": "77ebac1eb6f1a1d6fff9",
-    "url": "/frame-react-home/static/js/main.77ebac1e.chunk.js"
+    "revision": "e8d112902a937a1b61d4",
+    "url": "/frame-react-home/static/js/main.e8d11290.chunk.js"
   },
   {
     "revision": "c998808ccab1733b675602c37f1d5cac",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/6f6ccb4c.dac30a96.png"
   },
   {
-    "revision": "e9e17d33c03c98ef9c9162720a870f6e",
+    "revision": "944d246d349a3b058b75d5ccfbf8765a",
     "url": "/frame-react-home/index.html"
   }
 ];
