@@ -5,10 +5,10 @@ import downArrow from '../images/downArrow.png';
 const Landing = () => {
     return (
     <div className="landingContent">
-        <nav className="topNav">
+        {/* <nav className="topNav">
             <div className="navItem"><strong>ABOUT</strong></div>
             <div className="navItem"><strong>CONTACT</strong></div>    
-        </nav>
+        </nav> */}
         <div className="logoContainer"> 
             <img className="centerLogo" src={ whiteLogo } alt="Frame logo"/>
             <div className="logoBreak"></div>

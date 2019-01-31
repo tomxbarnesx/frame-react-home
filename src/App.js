@@ -1,18 +1,112 @@
 import React, { Component } from 'react';
+
 import './App.css';
+import featureData from './data/features';
+
+
 import Landing from './components/Landing';
 import Feature from './components/Feature';
-import AltFeature from './components/AltFeature';
+// import AltFeature from './components/AltFeature';
 import Particles from 'react-particles-js';
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      featureData: featureData,
+      activeFeature: 0,
+      scroll: 0
+    }
+    this.handleScroll = this.handleScroll.bind(this)
+    // this.handleChange = this.handleChange.bind(this)
+  }
+
+  componentDidMount(){
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount(){
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  throttle(fn, wait) {
+    let time = Date.now()
+
+    return function(){
+      if((time + wait - Date.now()) < 0) {
+        fn()
+        time = Date.now()
+      }
+    }
+  }
+
+  handleScroll() {
+    const scrollHeight = document.body.scrollHeight;
+    const windowHeight = window.innerHeight
+    const top = this.top;
+    const scrollTop = window.scrollY;
+    let scrollAmount = (scrollTop / (scrollHeight-windowHeight)) * 100 // get amount scrolled (in %)
+    this.setState(prevState => {
+      return {
+        scroll: scrollAmount
+      }
+    })
+    console.log('page top', scrollAmount);
+
+    if (scrollAmount < 25) {
+      this.setState(prevState => {
+        return {
+          activeFeature: 0
+        }
+      })
+    }
+    if (scrollAmount > 25) {
+      setTimeout(
+        function() {
+          this.setState(prevState => {
+            return {
+              activeFeature: 1
+            }
+          })
+        }
+        .bind(this), 
+        200
+      )
+    }
+    if (scrollAmount > 35) {
+      setTimeout(
+        function() {
+          this.setState(prevState => {
+            return {
+              activeFeature: 2
+            }
+          })
+        }
+        .bind(this), 
+        200
+      )
+    }
+  }
+  // handleChange() {
+  //   if (this.state.scroll > 25) {
+  //     this.setState(prevState => {
+  //         return {
+  //             active: 1
+  //         }
+  //     })
+  //   }
+  //   console.log("FIRING!")
+  // }
+
   render() {
     return (
       <div className="App">
         <Landing />
-        <Feature />
-        <AltFeature />
+        <div className="stickyContainer">
+          <Feature scroll={this.state.scroll} info={this.state.featureData} active={this.state.activeFeature}/>
+        </div>
+        <footer></footer>
         <Particles 
         className="particleScreen"
         params={{

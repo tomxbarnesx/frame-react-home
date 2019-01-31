@@ -1,4 +1,6 @@
 .featureSection {
+    position: sticky;
+    top: 0;
     height: 100vh;
 }
 
@@ -8,6 +10,8 @@
     align-items: center;
     display: flex;
     width: 85%;
+    /* transform: translateX(-100%); */
+    /* opacity: 0; */
 }
 
 .iconContainer {
@@ -25,11 +29,16 @@
     width: 88%;
     margin: 0 auto;
     margin-top: -.85rem;
+    /* transform: translateX(-100%); */
+    /* opacity: 0; */
 }
 
 .phone {
     position: relative;
     margin-top: 1.5em;
+    /* opacity: 0; */
+    /* transform: translateX(-100%); */
+
 }
 
 .demoVid {
@@ -41,7 +50,40 @@
     margin-top:1em;
 }
 
-.fadeBox {
-    width: 75%;
-    margin: 0 auto;
+.fadeIn {
+    animation: faderIn 1.5s forwards;
+}
+
+.fadeOut {
+    animation: faderOut .5s forwards;
+}
+
+.refresher {
+    animation: refresh 1.5s forwards;
+}
+
+.refresher2 {
+    animation: refresh2 1s forwards;
+}
+
+@keyframes faderIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1;}
+}
+
+@keyframes faderOut {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes refresh {
+    0%   { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes refresh2 {
+    0%   { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 1; }
 }
