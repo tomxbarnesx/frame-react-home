@@ -1,6 +1,11 @@
 .featureSection {
     position: sticky;
     top: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.featureSection.active {
     height: 100vh;
 }
 
@@ -10,6 +15,7 @@
     align-items: center;
     display: flex;
     width: 85%;
+    /* opacity: 0; */
     /* transform: translateX(-100%); */
     /* opacity: 0; */
 }
