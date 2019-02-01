@@ -21,8 +21,6 @@ class App extends Component {
     this.handleScroll = this.handleScroll.bind(this)
     this.disableScroll = this.disableScroll.bind(this)
     this.MouseWheelHandler = this.MouseWheelHandler.bind(this)
-
-    // this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount(){
@@ -57,20 +55,23 @@ class App extends Component {
 
   MouseWheelHandler(e) {
     var e = window.event || e; // old IE support
-    if (this.state.delta <= 2){
+    let direction = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)))
+    if (this.state.delta <= 2 && this.state.delta >= 0){
       this.setState(prevState => {
-        return {
-          delta: prevState.delta + Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)))
+        if ((prevState.delta === 0 && direction === 1) || (prevState.delta === 2 && direction === -1) || prevState.delta === 1) {
+          return {
+            delta: prevState.delta + direction
+          }
         }
       })
     }
     console.log("DELTA", this.state.delta)
-    if (this.state)
-    this.setState(prevState => {
-      return {
-        activeFeature: prevState.activeFeature + 1 
-      }
-    })
+    // if (this.state)
+    // this.setState(prevState => {
+    //   return {
+    //     activeFeature: prevState.activeFeature + 1 
+    //   }
+    // })
     e.preventDefault()
     return false;
   }
