@@ -13,7 +13,7 @@ const featureData = [
     },
     {
         id: 2,
-        header: "Delivered to your digital stepstep",
+        header: "Delivered to your digital doorstep",
         sub: "Frame stories circumvent social media and are delivered directly to you through email, text and right in your calendar.",
         vid: "../video/RP4.mp4"
     }

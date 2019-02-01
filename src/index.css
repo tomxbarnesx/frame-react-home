@@ -10,16 +10,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url("./images/6f6ccb4c.png");
-  background-attachment: fixed; */
-  background: url("./images/6f6ccb4c.png") repeat fixed;
-  /* background-size: 100% 100vh; */
-  /* background-overflow: hidden; */
+}
 
-  /* overflow: hidden;
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
-  height: 100vh;
-  overflow: scroll; */
+  height: 100%;
+  z-index: -10;
+  background: url("./images/6f6ccb4c.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 code {

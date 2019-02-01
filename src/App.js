@@ -74,7 +74,7 @@ class App extends Component {
         200
       )
     }
-    if (scrollAmount > 35) {
+    if (scrollAmount > 45) {
       setTimeout(
         function() {
           this.setState(prevState => {

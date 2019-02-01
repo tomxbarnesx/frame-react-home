@@ -26,7 +26,7 @@ const Feature = (props) => {
             headerStyles = "featureHeader refresher"
             subStyles = "featureSub refresher"
         }
-        if (props.scroll > 35) {
+        if (props.scroll > 45) {
             headerStyles = "featureHeader refresher2"
             subStyles = "featureSub refresher2"
         }
