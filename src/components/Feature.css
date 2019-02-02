@@ -1,12 +1,14 @@
 .featureSection {
     position: sticky;
     top: 0;
+    left: 0;
     height: 0;
     overflow: hidden;
+    width: 100%;
 }
 
 .featureSection.active {
-    height: 100vh;
+    height: 100%;
 }
 
 .featureHeader {

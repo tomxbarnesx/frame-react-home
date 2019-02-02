@@ -14,13 +14,17 @@ class App extends Component {
     super();
     this.state = {
       featureData: featureData,
-      activeFeature: 0,
+      active: 0,
       scroll: 0,
-      delta: 0
+      delta: 0,
+      locked: true,
     }
     this.handleScroll = this.handleScroll.bind(this)
     this.disableScroll = this.disableScroll.bind(this)
     this.MouseWheelHandler = this.MouseWheelHandler.bind(this)
+    this.nextSlide = this.nextSlide.bind(this)
+    this.prevSlide = this.prevSlide.bind(this)
+    this.showSlide = this.showSlide.bind(this)
   }
 
   componentDidMount(){
@@ -55,26 +59,108 @@ class App extends Component {
 
   MouseWheelHandler(e) {
     var e = window.event || e; // old IE support
-    let direction = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)))
-    if (this.state.delta <= 2 && this.state.delta >= 0){
+    let scrollStrength = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)))
+    let scrollThreshold = 30;
+    console.log('DELTA', this.state.delta)
+   
+    //IF SCROLLING UP
+    if (scrollStrength > 0) {
       this.setState(prevState => {
-        if ((prevState.delta === 0 && direction === 1) || (prevState.delta === 2 && direction === -1) || prevState.delta === 1) {
-          return {
-            delta: prevState.delta + direction
-          }
+        return { 
+          delta: prevState.delta - 1
         }
       })
+      if(Math.abs(this.state.delta) >= scrollThreshold) {
+        this.prevSlide();
+      }
+    } 
+    // SCROLLING DOWN
+    else {
+      this.setState(prevState => {
+        return { 
+          delta: prevState.delta + 1
+        }
+      })      
+      if(Math.abs(this.state.delta) >= scrollThreshold) {
+          this.nextSlide();
+        }
+      }
+      if (this.state.locked === true) {
+        e.preventDefault()
+        return false;
+      }
     }
-    console.log("DELTA", this.state.delta)
-    // if (this.state)
-    // this.setState(prevState => {
-    //   return {
-    //     activeFeature: prevState.activeFeature + 1 
-    //   }
-    // })
-    e.preventDefault()
-    return false;
-  }
+
+    prevSlide() {
+
+      console.log("PREVIOUS")
+
+      if (this.state.active > 0){
+        this.setState(prevState => {
+          return {
+            active: prevState.active - 1
+          }
+        })
+      } else if (this.state.active === 0) {
+        this.setState({
+          locked: false
+        })
+      }
+
+      this.showSlide();
+    }
+
+    nextSlide() {
+
+      console.log("NEXT")
+
+      if (this.state.active < 2) {
+        this.setState(prevState => {
+          return {
+            active: prevState.active + 1
+          }
+        })
+      } else if (this.state.active === 2) {
+        this.setState({
+          locked: false
+        })
+      }
+
+      this.showSlide();
+    }
+
+    showSlide() {
+
+      console.log("ACTIVE", this.state.active)
+
+      this.setState(
+        {delta: 0}
+      )
+
+      // slides.each(function(i, slide) {
+      //   $(slide).toggleClass('active', (i >= currentSlideIndex));
+      // });
+    
+    }
+   
+    // if ((this.state.delta === 0 && direction === 1) || this.state.delta === 1 || (this.state.delta === 2 && direction === -1 )){
+      // if (this.state.delta >= 0 && this.state.delta <= 2) {
+      // this.setState(prevState => {
+      //   if ((prevState.delta === 0 && direction === 1) || (prevState.delta === 2 && direction === -1) || prevState.delta === 1) {
+      //     return {
+      //       delta: prevState.delta + direction
+      //     }
+      //   }
+      // })
+      // console.log("DELTA", this.state.delta)
+
+    // } else if ((this.state.delta === 0 && direction === -1) || (this.state.delta === 2 && direction === 1)) {
+    //   return
+    // }
+    // if ((this.state.delta === 2 && direction === 1) || (this.state.delta === 0 && direction === -1)){
+    //   return
+    // }
+    // }
 
   handleScroll() {
     const scrollHeight = document.body.scrollHeight;
@@ -83,7 +169,16 @@ class App extends Component {
     let scrollDirection = undefined;
     let scrollAmount = (scrollTop / (scrollHeight-windowHeight)) * 100; // get amount scrolled (in %)
 
-    if (scrollAmount > 32.5){
+    this.setState(prevState => {
+      return {
+        scroll: scrollAmount
+      }
+    })
+
+    if (this.state.scroll > 84 && this.state.scroll < 85){
+      this.setState(
+        {locked: true}
+      )
       this.disableScroll();
       // if (scrollAmount > this.state.scroll + 5 && this.state.activeFeature < 2) {
       //   scrollDirection = "BIG down";
@@ -108,24 +203,18 @@ class App extends Component {
       // return false;
     }
 
-    this.setState(prevState => {
-      return {
-        scroll: scrollAmount
-      }
-    })
-
     console.log('page top', this.state.scroll);
   }
 
   render() {
     const features = this.state.featureData.map((feature) => {
-      return <Feature key={feature.id} info={feature} scroll={this.state.scroll} active={this.state.delta} />
+      return <Feature key={feature.id} info={feature} scroll={this.state.scroll} active={this.state.active} />
     })
 
     return (
       <div className="App">
         <Landing />
-        <div className="stickyContainer">
+        <div className="stickyContent">
           {features}
         </div>
         <footer></footer>
