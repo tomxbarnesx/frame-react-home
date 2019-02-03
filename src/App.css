@@ -10,18 +10,6 @@
   height: 100vh;
   width: 100vw;
 }
-/* 
-.topNav {
-  display: flex;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.navItem {
-  margin-top: 1em;
-  margin-right: 1em;
-} */
 
 .logoContainer {
   position: absolute;
@@ -91,18 +79,19 @@
   pointer-events: all;
 }
 
-.stickyContainer {
-  height: 300vh;
+.stickyContent {
+  height: 120vh;
 }
 
-/* .particleScreen canvas {
-  height: 500vh;
-} */
-
-/* .particleScreen canvas {
-  width: 100% !important;
-  height: 500vh !important;
-} */
+.stickyWindow {
+  position: sticky;
+  overflow: hidden;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
 
 @keyframes slide {
   0%{
@@ -115,5 +104,6 @@
 
 
 footer {
-  height:100px
+  height:100vh;
+  background: black;
 }

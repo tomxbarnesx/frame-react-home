@@ -1,14 +1,14 @@
 .featureSection {
-    position: sticky;
-    top: 0;
-    left: 0;
-    height: 0;
     overflow: hidden;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    opacity: 0;
 }
 
 .featureSection.active {
-    height: 100%;
 }
 
 .featureHeader {
@@ -22,9 +22,14 @@
     /* opacity: 0; */
 }
 
+.featureHeaderText {
+    width: 250px;
+}
+
 .iconContainer {
-    width: 7rem;
-    margin-right: 1rem;
+    /* width: 50px;
+    height: 50px; */
+    /* margin-right: 1; */
     filter: invert(100%);
 }
 
@@ -46,8 +51,11 @@
     margin-top: 1.5em;
     /* opacity: 0; */
     /* transform: translateX(-100%); */
-
 }
+
+/* .phoneImg {
+    z-index: 9999;
+} */
 
 .demoVid {
     position: absolute;
@@ -66,13 +74,17 @@
     animation: faderOut .5s forwards;
 }
 
+.fadeInSwipe {
+    animation: fadeSwipe 1s .5s forwards;
+}
+/* 
 .refresher {
     animation: refresh 1.5s forwards;
 }
 
 .refresher2 {
     animation: refresh2 1s forwards;
-}
+} */
 
 @keyframes faderIn {
     0%   { opacity: 0; }
@@ -84,6 +96,18 @@
     100% { opacity: 0; }
 }
 
+@keyframes fadeSwipe {
+    0% { 
+        opacity: 0;
+        transform: translate(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}
+
+/* 
 @keyframes refresh {
     0%   { opacity: 1; }
     25% { opacity: 0; }
@@ -94,4 +118,4 @@
     0%   { opacity: 1; }
     25% { opacity: 0; }
     100% { opacity: 1; }
-}
+} */

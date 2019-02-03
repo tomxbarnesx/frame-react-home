@@ -80,11 +80,12 @@ class App extends Component {
         return { 
           delta: prevState.delta + 1
         }
-      })      
+      })
       if(Math.abs(this.state.delta) >= scrollThreshold) {
           this.nextSlide();
-        }
       }
+    }
+
       if (this.state.locked === true) {
         e.preventDefault()
         return false;
@@ -136,37 +137,12 @@ class App extends Component {
       this.setState(
         {delta: 0}
       )
-
-      // slides.each(function(i, slide) {
-      //   $(slide).toggleClass('active', (i >= currentSlideIndex));
-      // });
-    
     }
-   
-    // if ((this.state.delta === 0 && direction === 1) || this.state.delta === 1 || (this.state.delta === 2 && direction === -1 )){
-      // if (this.state.delta >= 0 && this.state.delta <= 2) {
-      // this.setState(prevState => {
-      //   if ((prevState.delta === 0 && direction === 1) || (prevState.delta === 2 && direction === -1) || prevState.delta === 1) {
-      //     return {
-      //       delta: prevState.delta + direction
-      //     }
-      //   }
-      // })
-      // console.log("DELTA", this.state.delta)
-
-    // } else if ((this.state.delta === 0 && direction === -1) || (this.state.delta === 2 && direction === 1)) {
-    //   return
-    // }
-    // if ((this.state.delta === 2 && direction === 1) || (this.state.delta === 0 && direction === -1)){
-    //   return
-    // }
-    // }
 
   handleScroll() {
     const scrollHeight = document.body.scrollHeight;
     const windowHeight = window.innerHeight
     const scrollTop = window.scrollY;
-    let scrollDirection = undefined;
     let scrollAmount = (scrollTop / (scrollHeight-windowHeight)) * 100; // get amount scrolled (in %)
 
     this.setState(prevState => {
@@ -175,35 +151,14 @@ class App extends Component {
       }
     })
 
-    if (this.state.scroll > 84 && this.state.scroll < 85){
+    if (this.state.scroll > 48 && this.state.scroll < 52){
       this.setState(
         {locked: true}
       )
       this.disableScroll();
-      // if (scrollAmount > this.state.scroll + 5 && this.state.activeFeature < 2) {
-      //   scrollDirection = "BIG down";
-      //   this.setState(prevState => {
-      //     return {
-      //       activeFeature: prevState.activeFeature + 1 
-      //     }
-      //   })
-      //   console.log(scrollDirection);
-      //   console.log(this.state.activeFeature)
-  
-      // } else if (scrollAmount < this.state.scroll - 5 && this.state.activeFeature > 0) {
-      //   scrollDirection = "BIG up";
-      //   this.setState(prevState => {
-      //     return {
-      //       activeFeature: prevState.activeFeature - 1 
-      //     }
-      //   })
-      //   console.log(scrollDirection);
-      //   console.log(this.state.activeFeature)
-      // }
-      // return false;
     }
 
-    console.log('page top', this.state.scroll);
+    console.log('STATE SCROLL:', this.state.scroll);
   }
 
   render() {
@@ -215,10 +170,12 @@ class App extends Component {
       <div className="App">
         <Landing />
         <div className="stickyContent">
-          {features}
+          <div className="stickyWindow">
+            {features}
+          </div>
         </div>
-        <footer></footer>
         <ParticleWrapper/>
+        <footer></footer>
       </div>
     );
   }
