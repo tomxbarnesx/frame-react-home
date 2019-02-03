@@ -22,6 +22,10 @@
     /* opacity: 0; */
 }
 
+.featureHeader.reverse {
+    flex-direction: row-reverse;
+}
+
 .featureHeaderText {
     width: 250px;
 }
@@ -47,9 +51,9 @@
 }
 
 .phone {
-    position: relative;
-    margin-top: 1.5em;
-    /* opacity: 0; */
+    position: absolute;
+    top: 170px;
+    opacity: 0;
     /* transform: translateX(-100%); */
 }
 
@@ -67,15 +71,19 @@
 }
 
 .fadeIn {
-    animation: faderIn 1.5s forwards;
+    animation: faderIn 1.2s forwards;
 }
 
 .fadeOut {
-    animation: faderOut .5s forwards;
+    animation: faderOut 1s forwards;
 }
 
-.fadeInSwipe {
-    animation: fadeSwipe 1s .5s forwards;
+.fadeInSwipeLeft {
+    animation: fadeSwipeLeft 1s .5s forwards;
+}
+
+.fadeInSwipeRight {
+    animation: fadeSwipeRight 1s .5s forwards;
 }
 /* 
 .refresher {
@@ -96,16 +104,33 @@
     100% { opacity: 0; }
 }
 
-@keyframes fadeSwipe {
+@keyframes fadeSwipeLeft {
     0% { 
         opacity: 0;
         transform: translate(-100%);
     }
+
     100% {
         opacity: 1;
         transform: translate(0%);
     }
 }
+
+@keyframes fadeSwipeRight {
+    0% { 
+        opacity: 0;
+        transform: translate(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}
+/* 
+@keyframes fadeSwipeRight {
+
+} */
 
 /* 
 @keyframes refresh {

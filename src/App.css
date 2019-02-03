@@ -84,7 +84,6 @@
 }
 
 .stickyWindow {
-  position: sticky;
   overflow: hidden;
   width: 100%;
   position: sticky;

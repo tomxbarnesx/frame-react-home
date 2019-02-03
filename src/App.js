@@ -6,7 +6,8 @@ import featureData from './data/features';
 
 import Landing from './components/Landing';
 import Feature from './components/Feature';
-import ParticleWrapper from './components/ParticleWrapper'
+import Phone from './components/Phone';
+import ParticleWrapper from './components/ParticleWrapper';
 // import AltFeature from './components/AltFeature';
 
 class App extends Component {
@@ -47,14 +48,19 @@ class App extends Component {
   }
 
   disableScroll(){
-    if (window.addEventListener) {
-      // IE9, Chrome, Safari, Opera
-      window.addEventListener("mousewheel", this.MouseWheelHandler, false);
-      // Firefox
-      window.addEventListener("DOMMouseScroll", this.MouseWheelHandler, false);
+    if (this.state.locked === true) {
+      if (window.addEventListener) {
+        // IE9, Chrome, Safari, Opera
+        window.addEventListener("mousewheel", this.MouseWheelHandler, true);
+        // Firefox
+        window.addEventListener("DOMMouseScroll", this.MouseWheelHandler, true);
+      }
+      // IE 6/7/8
+      else window.attachEvent("onmousewheel", this.MouseWheelHandler);
+    } else {
+      window.removeEventListener("mousewheel", this.MouseWheelHandler, true);
+      window.removeEventListener("DOMMouseScroll", this.MouseWheelHandler, true);
     }
-    // IE 6/7/8
-    else window.attachEvent("onmousewheel", this.MouseWheelHandler);
   }
 
   MouseWheelHandler(e) {
@@ -156,6 +162,12 @@ class App extends Component {
         {locked: true}
       )
       this.disableScroll();
+    } 
+    if (this.state.scroll < 48 || this.state.scroll > 52) {
+      this.setState(
+        {locked: false}
+      )
+      this.disableScroll();
     }
 
     console.log('STATE SCROLL:', this.state.scroll);
@@ -172,6 +184,7 @@ class App extends Component {
         <div className="stickyContent">
           <div className="stickyWindow">
             {features}
+            <Phone scroll={this.state.scroll} active={this.state.active} />
           </div>
         </div>
         <ParticleWrapper/>
