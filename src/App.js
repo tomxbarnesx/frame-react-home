@@ -66,7 +66,7 @@ class App extends Component {
   MouseWheelHandler(e) {
     var e = window.event || e; // old IE support
     let scrollStrength = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)))
-    let scrollThreshold = 30;
+    let scrollThreshold = 35;
     console.log('DELTA', this.state.delta)
    
     //IF SCROLLING UP
@@ -163,7 +163,7 @@ class App extends Component {
       )
       this.disableScroll();
     } 
-    if (this.state.scroll < 48 || this.state.scroll > 52) {
+    if (this.state.scroll < 48 || this.state.scroll > 55) {
       this.setState(
         {locked: false}
       )
