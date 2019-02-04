@@ -18,6 +18,8 @@ class App extends Component {
       active: 0,
       scroll: 0,
       delta: 0,
+      percentage: 0,
+      dragStart: null,
       locked: true,
     }
     this.handleScroll = this.handleScroll.bind(this)
@@ -54,12 +56,20 @@ class App extends Component {
         window.addEventListener("mousewheel", this.MouseWheelHandler, true);
         // Firefox
         window.addEventListener("DOMMouseScroll", this.MouseWheelHandler, true);
+        // Mobile
+        window.addEventListener("touchstart", this.touchStart);
+        window.addEventListener("touchmove", this.touchMove);
+        window.addEventListener("touchend", this.touchEnd);
       }
       // IE 6/7/8
       else window.attachEvent("onmousewheel", this.MouseWheelHandler);
     } else {
       window.removeEventListener("mousewheel", this.MouseWheelHandler, true);
       window.removeEventListener("DOMMouseScroll", this.MouseWheelHandler, true);
+      // Mobile
+      window.removeEventListener("touchstart", this.touchStart);
+      window.removeEventListener("touchmove", this.touchMove);
+      window.removeEventListener("touchend", this.touchEnd);
     }
   }
 
@@ -157,7 +167,7 @@ class App extends Component {
       }
     })
 
-    if (this.state.scroll > 48 && this.state.scroll < 52){
+    if (this.state.scroll > 44 && this.state.scroll < 50){
       this.setState(
         {locked: true}
       )
@@ -172,6 +182,92 @@ class App extends Component {
 
     console.log('STATE SCROLL:', this.state.scroll);
   }
+
+  //MOBILE SCRIPTS
+
+  touchStart(event) {
+
+    if (this.state.dragStart !== null) { return; }
+    // if (event.originalEvent.touches) { 
+    //   event = event.originalEvent.touches[0];
+    // }
+  
+    // where in the viewport was touched
+    this.setState({
+      dragStart: event.clientY
+    })
+    // make sure we're dealing with a slide
+    // target = slides.eq(currentSlideIndex)[0];	
+  
+    // // disable transitions while dragging
+    // target.classList.add('no-animation');
+  
+    // previousTarget = slides.eq(currentSlideIndex-1)[0];
+    // previousTarget.classList.add('no-animation');
+  }
+
+  touchMove (event) {
+
+    if (this.state.dragStart === null) { return; }
+    // if (event.originalEvent.touches) { 
+    //   event = event.originalEvent.touches[0];
+    // }
+  
+    this.setState(prevState => {
+      return {
+        delta: this.state.dragStart - event.clientY,
+        percentage: this.state.delta / window.innerHeight
+      }
+    })
+  
+    // Going down/next. Animate the height of the target element.
+    // if (this.state.percentage > 0) {
+    //   this.setState(prevState => {
+    //     return {
+    //       active: prevState.active + 1
+    //     }
+    //   })
+    // }
+  
+    // // Going up/prev. Animate the height of the _previous_ element.
+    // else if (previousTarget) {
+    //   this.setState(prevState => {
+    //     return {
+    //       active: prevState.active - 1
+    //     }
+    //   })
+    // }
+  
+    // Don't drag element. This is important.
+    return false;
+  }
+
+  touchEnd () {
+
+    const dragThreshold = 0.15;
+    this.setState({
+      dragStart: null
+    });
+    // target.classList.remove('no-animation');
+    // if (previousTarget) { 
+    //   previousTarget.classList.remove('no-animation'); 
+    // }
+  
+    if (this.state.percentage >= dragThreshold) {
+      this.nextSlide();
+    } else if ( Math.abs(this.state.percentage) >= dragThreshold ) {
+      this.prevSlide();
+    } else {
+      // show current slide i.e. snap back
+      this.showSlide();
+    }
+  
+    this.setState({
+      percentage: 0
+    })
+  
+  }
+  
 
   render() {
     const features = this.state.featureData.map((feature) => {

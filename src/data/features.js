@@ -2,14 +2,14 @@ const featureData = [
     {
         id: 0,
         header: "Deeply reported narratives",
-        sub: "Riveting human stories that expose the underlying forces driving the news",
+        sub: "Every week, a new riveting, human story that exposes the underlying forces driving the news",
         vid: '../video/Fentanyl_Intro.mp4',
         position: "left",
     },
     {
         id: 1,
         header: "Immersive, interactive",
-        sub: "Interactive features allow you new agency to choose your path through the story",
+        sub: "Interactive features allow viewers new agency to choose their own paths through the story",
         vid: "../video/RP5.mp4",
         position: 'right',
     },
