@@ -1,0 +1,41 @@
+.deliveryMaster {
+    margin-top: 28px;
+}
+
+.deliveryIcon {
+    background-color: rgba(255, 255, 255, 0.74);
+    padding: 5%;
+    width: 30%;
+    margin: 3%;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deliveryIcon.active {
+    background-color: white;
+}
+
+.deliveryIconContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.connector {
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background-color: white;
+    margin-top: -10px;
+    left: 23%;
+}
+
+.optionsBox{
+    width: 100%;
+    margin-top: 30px;
+    height: 150px;
+    background-color: white;
+    border-radius: .5em;
+    display: hidden;
+}
