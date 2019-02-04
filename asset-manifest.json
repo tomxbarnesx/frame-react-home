@@ -1,7 +1,7 @@
 {
   "main.css": "/frame-react-home/static/css/main.66005f89.chunk.css",
-  "main.js": "/frame-react-home/static/js/main.2e75a60a.chunk.js",
-  "main.js.map": "/frame-react-home/static/js/main.2e75a60a.chunk.js.map",
+  "main.js": "/frame-react-home/static/js/main.487ecadc.chunk.js",
+  "main.js.map": "/frame-react-home/static/js/main.487ecadc.chunk.js.map",
   "static/js/1.9c4fb892.chunk.js": "/frame-react-home/static/js/1.9c4fb892.chunk.js",
   "static/js/1.9c4fb892.chunk.js.map": "/frame-react-home/static/js/1.9c4fb892.chunk.js.map",
   "runtime~main.js": "/frame-react-home/static/js/runtime~main.c1caec55.js",
@@ -18,6 +18,6 @@
   "static/media/downArrow.png": "/frame-react-home/static/media/downArrow.4fe9c605.png",
   "static/css/main.66005f89.chunk.css.map": "/frame-react-home/static/css/main.66005f89.chunk.css.map",
   "index.html": "/frame-react-home/index.html",
-  "precache-manifest.646b5717051c4d31d0045bc871eef54b.js": "/frame-react-home/precache-manifest.646b5717051c4d31d0045bc871eef54b.js",
+  "precache-manifest.5c02c1ee3e3fd60f7e4341868cc50d03.js": "/frame-react-home/precache-manifest.5c02c1ee3e3fd60f7e4341868cc50d03.js",
   "service-worker.js": "/frame-react-home/service-worker.js"
 }
