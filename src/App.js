@@ -71,9 +71,9 @@ class App extends Component {
       window.removeEventListener("mousewheel", this.MouseWheelHandler, true);
       window.removeEventListener("DOMMouseScroll", this.MouseWheelHandler, true);
       // Mobile
-      stickyWindow.removeEventListener("touchstart", this.touchStart, false);
-      stickyWindow.removeEventListener("touchmove", this.touchMove, false);
-      stickyWindow.removeEventListener("touchend", this.touchEnd, false);
+      stickyWindow.removeEventListener("touchstart", this.touchStart);
+      stickyWindow.removeEventListener("touchmove", this.touchMove);
+      stickyWindow.removeEventListener("touchend", this.touchEnd);
     }
   }
 
@@ -146,7 +146,6 @@ class App extends Component {
           locked: false
         })
       }
-
       this.showSlide();
     }
 
@@ -198,12 +197,13 @@ class App extends Component {
     // }
 
     console.log("TOUCH START INIT")
-    console.log(event)
   
     // where in the viewport was touched
     this.setState({
-      dragStart: event.clientY
+      dragStart: event.touches[0].clientY
     })
+
+    console.log(this.state.dragStart)
 
     // console.log(this.state.dragStart);
     // make sure we're dealing with a slide
@@ -222,14 +222,20 @@ class App extends Component {
     // if (event.originalEvent.touches) { 
     //   event = event.originalEvent.touches[0];
     // }
+
+    // console.log(event.touches[0].clientY)
   
     this.setState(prevState => {
       return {
-        delta: this.state.dragStart - event.clientY,
+        delta: this.state.dragStart - event.touches[0].clientY,
         percentage: this.state.delta / window.innerHeight
       }
     })
+
+    console.log(this.state.percentage)
   
+    // console.log(this.state.delta)
+
     // Going down/next. Animate the height of the target element.
     // if (this.state.percentage > 0) {
     //   this.setState(prevState => {
@@ -249,8 +255,10 @@ class App extends Component {
     // }
   
     // Don't drag element. This is important.
-    event.preventDefault();
-    return false;
+    if (this.state.locked === true){
+      event.preventDefault();
+      return false;
+    }
   }
 
   touchEnd () {
