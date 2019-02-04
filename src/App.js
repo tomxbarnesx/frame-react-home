@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
+import {Route, Switch, BrowserRouter} from 'react-router-dom';
 
 import './App.css';
 import featureData from './data/features';
-
-
 import Landing from './components/Landing';
 import Feature from './components/Feature';
 import Phone from './components/Phone';
 import ParticleWrapper from './components/ParticleWrapper';
-// import AltFeature from './components/AltFeature';
 
 class App extends Component {
   constructor() {
