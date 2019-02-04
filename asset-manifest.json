@@ -1,7 +1,7 @@
 {
-  "main.css": "/frame-react-home/static/css/main.7772b629.chunk.css",
-  "main.js": "/frame-react-home/static/js/main.48e91376.chunk.js",
-  "main.js.map": "/frame-react-home/static/js/main.48e91376.chunk.js.map",
+  "main.css": "/frame-react-home/static/css/main.66005f89.chunk.css",
+  "main.js": "/frame-react-home/static/js/main.7169ad5a.chunk.js",
+  "main.js.map": "/frame-react-home/static/js/main.7169ad5a.chunk.js.map",
   "static/js/1.9c4fb892.chunk.js": "/frame-react-home/static/js/1.9c4fb892.chunk.js",
   "static/js/1.9c4fb892.chunk.js.map": "/frame-react-home/static/js/1.9c4fb892.chunk.js.map",
   "runtime~main.js": "/frame-react-home/static/js/runtime~main.c1caec55.js",
@@ -16,8 +16,8 @@
   "static/media/RP4.mp4": "/frame-react-home/static/media/RP4.4906489a.mp4",
   "static/media/index.css": "/frame-react-home/static/media/6f6ccb4c.dac30a96.png",
   "static/media/downArrow.png": "/frame-react-home/static/media/downArrow.4fe9c605.png",
-  "static/css/main.7772b629.chunk.css.map": "/frame-react-home/static/css/main.7772b629.chunk.css.map",
+  "static/css/main.66005f89.chunk.css.map": "/frame-react-home/static/css/main.66005f89.chunk.css.map",
   "index.html": "/frame-react-home/index.html",
-  "precache-manifest.8e6fdb863b6a78aef9a1b30c2eaca1bf.js": "/frame-react-home/precache-manifest.8e6fdb863b6a78aef9a1b30c2eaca1bf.js",
+  "precache-manifest.950a98882093021ae9193d834a9aae4d.js": "/frame-react-home/precache-manifest.950a98882093021ae9193d834a9aae4d.js",
   "service-worker.js": "/frame-react-home/service-worker.js"
 }
