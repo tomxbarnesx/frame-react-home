@@ -4,16 +4,20 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/interactive.b932079b.png"
   },
   {
-    "revision": "487ecadc40e98213bf13",
-    "url": "/frame-react-home/static/css/main.66005f89.chunk.css"
+    "revision": "5754d2c5acbea0a0dea2",
+    "url": "/frame-react-home/static/css/main.81ac4006.chunk.css"
   },
   {
-    "revision": "9c4fb892ceb07b1666b5",
-    "url": "/frame-react-home/static/js/1.9c4fb892.chunk.js"
+    "revision": "79ac1a1bfbdda70a0824",
+    "url": "/frame-react-home/static/js/1.79ac1a1b.chunk.js"
   },
   {
     "revision": "c1caec5508f19016b6ae",
     "url": "/frame-react-home/static/js/runtime~main.c1caec55.js"
+  },
+  {
+    "revision": "9a7ecac469eec68622d9f8a14f974725",
+    "url": "/frame-react-home/static/media/cal.9a7ecac4.png"
   },
   {
     "revision": "8ade99bcd9ebfd0142fe7dff9b9daf47",
@@ -28,12 +32,8 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/report.c998808c.png"
   },
   {
-    "revision": "487ecadc40e98213bf13",
-    "url": "/frame-react-home/static/js/main.487ecadc.chunk.js"
-  },
-  {
-    "revision": "9a7ecac469eec68622d9f8a14f974725",
-    "url": "/frame-react-home/static/media/cal.9a7ecac4.png"
+    "revision": "5754d2c5acbea0a0dea2",
+    "url": "/frame-react-home/static/js/main.5754d2c5.chunk.js"
   },
   {
     "revision": "b8b07822974ab64b4efcdcf9a9435089",
@@ -52,11 +52,15 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/RP4.4906489a.mp4"
   },
   {
+    "revision": "41ff2648e9d7675e2c0ba22bbcb6f02e",
+    "url": "/frame-react-home/static/media/text.41ff2648.png"
+  },
+  {
     "revision": "dac30a96390db2e34b82129c63f5d64d",
     "url": "/frame-react-home/static/media/6f6ccb4c.dac30a96.png"
   },
   {
-    "revision": "b0211deb8407b0a23a01d784fd925258",
+    "revision": "14b616ccf26e6170dceb43c6ef260c8b",
     "url": "/frame-react-home/index.html"
   }
 ];
