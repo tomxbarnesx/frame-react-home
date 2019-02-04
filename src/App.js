@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
+import {Route, Switch, BrowserRouter} from 'react-router-dom';
 
 import './App.css';
 import featureData from './data/features';
-
-
 import Landing from './components/Landing';
 import Feature from './components/Feature';
-// import AltFeature from './components/AltFeature';
-import Particles from 'react-particles-js';
-
+import Phone from './components/Phone';
+import ParticleWrapper from './components/ParticleWrapper';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       featureData: featureData,
-      activeFeature: 0,
-      scroll: 0
+      active: 0,
+      scroll: 0,
+      delta: 0,
+      percentage: 0,
+      dragStart: null,
+      locked: true,
     }
     this.handleScroll = this.handleScroll.bind(this)
-    // this.handleChange = this.handleChange.bind(this)
+    this.disableScroll = this.disableScroll.bind(this)
+    this.MouseWheelHandler = this.MouseWheelHandler.bind(this)
+    this.nextSlide = this.nextSlide.bind(this)
+    this.prevSlide = this.prevSlide.bind(this)
+    this.showSlide = this.showSlide.bind(this)
+    this.touchStart = this.touchStart.bind(this)
+    this.touchMove = this.touchMove.bind(this)
+    this.touchEnd = this.touchEnd.bind(this)
   }
 
   componentDidMount(){
@@ -41,184 +50,258 @@ class App extends Component {
     }
   }
 
+  disableScroll(){
+    let stickyWindow = document.getElementsByClassName("stickyWindow")[0];
+    if (this.state.locked === true) {
+      if (window.addEventListener) {
+        // IE9, Chrome, Safari, Opera
+        window.addEventListener("mousewheel", this.MouseWheelHandler, true);
+        // Firefox
+        window.addEventListener("DOMMouseScroll", this.MouseWheelHandler, true);
+        // Mobile
+        stickyWindow.addEventListener("touchstart", this.touchStart, false);
+        stickyWindow.addEventListener("touchmove", this.touchMove, false);
+        stickyWindow.addEventListener("touchend", this.touchEnd, false);
+      }
+      // IE 6/7/8
+      else window.attachEvent("onmousewheel", this.MouseWheelHandler);
+    } else {
+      window.removeEventListener("mousewheel", this.MouseWheelHandler, true);
+      window.removeEventListener("DOMMouseScroll", this.MouseWheelHandler, true);
+      // Mobile
+      stickyWindow.removeEventListener("touchstart", this.touchStart);
+      stickyWindow.removeEventListener("touchmove", this.touchMove);
+      stickyWindow.removeEventListener("touchend", this.touchEnd);
+    }
+  }
+
+  MouseWheelHandler(e) {
+    var e = window.event || e; // old IE support
+    let scrollStrength = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)))
+    let scrollThreshold = 35;
+    console.log('DELTA', this.state.delta)
+   
+    //IF SCROLLING UP
+    if (scrollStrength > 0) {
+      this.setState(prevState => {
+        return { 
+          delta: prevState.delta - 1
+        }
+      })
+      if(Math.abs(this.state.delta) >= scrollThreshold) {
+        this.prevSlide();
+      }
+    } 
+    // SCROLLING DOWN
+    else {
+      this.setState(prevState => {
+        return { 
+          delta: prevState.delta + 1
+        }
+      })
+      if(Math.abs(this.state.delta) >= scrollThreshold) {
+          this.nextSlide();
+      }
+    }
+
+      if (this.state.locked === true) {
+        e.preventDefault()
+        return false;
+      }
+    }
+
+    prevSlide() {
+
+      console.log("PREVIOUS")
+
+      if (this.state.active > 0){
+        this.setState(prevState => {
+          return {
+            active: prevState.active - 1
+          }
+        })
+      } else if (this.state.active === 0) {
+        this.setState({
+          locked: false
+        })
+      }
+
+      this.showSlide();
+    }
+
+    nextSlide() {
+
+      console.log("NEXT")
+
+      if (this.state.active < 2) {
+        this.setState(prevState => {
+          return {
+            active: prevState.active + 1
+          }
+        })
+      } else if (this.state.active === 2) {
+        this.setState({
+          locked: false
+        })
+      }
+      this.showSlide();
+    }
+
+    showSlide() {
+
+      console.log("ACTIVE", this.state.active)
+
+      this.setState(
+        {delta: 0}
+      )
+    }
+
   handleScroll() {
     const scrollHeight = document.body.scrollHeight;
     const windowHeight = window.innerHeight
-    const top = this.top;
     const scrollTop = window.scrollY;
-    let scrollAmount = (scrollTop / (scrollHeight-windowHeight)) * 100 // get amount scrolled (in %)
+    let scrollAmount = (scrollTop / (scrollHeight-windowHeight)) * 100; // get amount scrolled (in %)
+
     this.setState(prevState => {
       return {
         scroll: scrollAmount
       }
     })
-    console.log('page top', scrollAmount);
 
-    if (scrollAmount < 25) {
-      this.setState(prevState => {
-        return {
-          activeFeature: 0
-        }
-      })
-    }
-    if (scrollAmount > 25) {
-      setTimeout(
-        function() {
-          this.setState(prevState => {
-            return {
-              activeFeature: 1
-            }
-          })
-        }
-        .bind(this), 
-        200
+    if (this.state.scroll > 44 && this.state.scroll < 50){
+      this.setState(
+        {locked: true}
       )
-    }
-    if (scrollAmount > 45) {
-      setTimeout(
-        function() {
-          this.setState(prevState => {
-            return {
-              activeFeature: 2
-            }
-          })
-        }
-        .bind(this), 
-        200
+      console.log("LOCKED!")
+      this.disableScroll();
+    } 
+    if (this.state.scroll < 48 || this.state.scroll > 55) {
+      this.setState(
+        {locked: false}
       )
+      this.disableScroll();
+    }
+
+    console.log('STATE SCROLL:', this.state.scroll);
+  }
+
+  //MOBILE SCRIPTS
+
+  touchStart(event) {
+
+    if (this.state.dragStart !== null) { return; }
+    // if (event.originalEvent.touches) { 
+    //   event = event.originalEvent.touches[0];
+    // }
+
+    console.log("TOUCH START INIT")
+  
+    // where in the viewport was touched
+    this.setState({
+      dragStart: event.touches[0].clientY
+    })
+
+    console.log(this.state.dragStart)
+
+    // console.log(this.state.dragStart);
+    // make sure we're dealing with a slide
+    // target = slides.eq(currentSlideIndex)[0];	
+  
+    // // disable transitions while dragging
+    // target.classList.add('no-animation');
+  
+    // previousTarget = slides.eq(currentSlideIndex-1)[0];
+    // previousTarget.classList.add('no-animation');
+  }
+
+  touchMove (event) {
+
+    if (this.state.dragStart === null) { return; }
+    // if (event.originalEvent.touches) { 
+    //   event = event.originalEvent.touches[0];
+    // }
+
+    // console.log(event.touches[0].clientY)
+  
+    this.setState(prevState => {
+      return {
+        delta: this.state.dragStart - event.touches[0].clientY,
+        percentage: this.state.delta / window.innerHeight
+      }
+    })
+
+    console.log(this.state.percentage)
+  
+    // console.log(this.state.delta)
+
+    // Going down/next. Animate the height of the target element.
+    // if (this.state.percentage > 0) {
+    //   this.setState(prevState => {
+    //     return {
+    //       active: prevState.active + 1
+    //     }
+    //   })
+    // }
+  
+    // // Going up/prev. Animate the height of the _previous_ element.
+    // else if (previousTarget) {
+    //   this.setState(prevState => {
+    //     return {
+    //       active: prevState.active - 1
+    //     }
+    //   })
+    // }
+  
+    // Don't drag element. This is important.
+    if (this.state.locked === true){
+      event.preventDefault();
+      return false;
     }
   }
-  // handleChange() {
-  //   if (this.state.scroll > 25) {
-  //     this.setState(prevState => {
-  //         return {
-  //             active: 1
-  //         }
-  //     })
-  //   }
-  //   console.log("FIRING!")
-  // }
+
+  touchEnd () {
+
+    const dragThreshold = 0.15;
+    this.setState({
+      dragStart: null
+    });
+    // target.classList.remove('no-animation');
+    // if (previousTarget) { 
+    //   previousTarget.classList.remove('no-animation'); 
+    // }
+  
+    if (this.state.percentage >= dragThreshold) {
+      this.nextSlide();
+    } else if ( Math.abs(this.state.percentage) >= dragThreshold ) {
+      this.prevSlide();
+    } else {
+      // show current slide i.e. snap back
+      this.showSlide();
+    }
+  
+    this.setState({
+      percentage: 0
+    })
+  
+  }
+  
 
   render() {
+    const features = this.state.featureData.map((feature) => {
+      return <Feature key={feature.id} info={feature} scroll={this.state.scroll} active={this.state.active} />
+    })
+
     return (
       <div className="App">
         <Landing />
-        <div className="stickyContainer">
-          <Feature scroll={this.state.scroll} info={this.state.featureData} active={this.state.activeFeature}/>
+        <div className="stickyContent">
+          <div className="stickyWindow">
+            {features}
+            <Phone scroll={this.state.scroll} active={this.state.active} />
+          </div>
         </div>
+        {/* <ParticleWrapper/> */}
         <footer></footer>
-        <Particles 
-        className="particleScreen"
-        params={{
-          "particles": {
-            "number": {
-              "value": 165,
-              "density": {
-                "enable": true,
-                "value_area": 800
-              }
-            },
-            "color": {
-              "value": "#ffffff"
-            },
-            "shape": {
-              "type": "circle",
-              "stroke": {
-                "width": 0,
-                "color": "#000000"
-              },
-              "polygon": {
-                "nb_sides": 5
-              },
-              "image": {
-                "src": "img/github.svg",
-                "width": 100,
-                "height": 100
-              }
-            },
-            "opacity": {
-              "value": .6,
-              "random": true,
-              "anim": {
-                "enable": true,
-                "speed": 1,
-                "opacity_min": 0,
-                "sync": false
-              }
-            },
-            "size": {
-              "value": 1,
-              "random": true,
-              "anim": {
-                "enable": false,
-                "speed": 4,
-                "size_min": 0.3,
-                "sync": false
-              }
-            },
-            "line_linked": {
-              "enable": false,
-              "distance": 150,
-              "color": "#ffffff",
-              "opacity": 0.4,
-              "width": 1
-            },
-            "move": {
-              "enable": true,
-              "speed": 1,
-              "direction": "none",
-              "random": true,
-              "straight": false,
-              "out_mode": "out",
-              "bounce": false,
-              "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 600
-              }
-            }
-          },
-          "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-              "onhover": {
-                "enable": false,
-                "mode": "bubble"
-              },
-              "onclick": {
-                "enable": true,
-                "mode": "repulse"
-              },
-              "resize": true
-            },
-            "modes": {
-              "grab": {
-                "distance": 400,
-                "line_linked": {
-                  "opacity": 1
-                }
-              },
-              "bubble": {
-                "distance": 250,
-                "size": 0,
-                "duration": 2,
-                "opacity": 0,
-                "speed": 3
-              },
-              "repulse": {
-                "distance": 178.6569867062961,
-                "duration": 0.4
-              },
-              "push": {
-                "particles_nb": 4
-              },
-              "remove": {
-                "particles_nb": 2
-              }
-            }
-          },
-          "retina_detect": true
-        }} />
       </div>
     );
   }
