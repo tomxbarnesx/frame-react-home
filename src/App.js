@@ -28,6 +28,9 @@ class App extends Component {
     this.nextSlide = this.nextSlide.bind(this)
     this.prevSlide = this.prevSlide.bind(this)
     this.showSlide = this.showSlide.bind(this)
+    this.touchStart = this.touchStart.bind(this)
+    this.touchMove = this.touchMove.bind(this)
+    this.touchEnd = this.touchEnd.bind(this)
   }
 
   componentDidMount(){
@@ -50,6 +53,7 @@ class App extends Component {
   }
 
   disableScroll(){
+    let stickyWindow = document.getElementsByClassName("stickyWindow")[0];
     if (this.state.locked === true) {
       if (window.addEventListener) {
         // IE9, Chrome, Safari, Opera
@@ -57,9 +61,9 @@ class App extends Component {
         // Firefox
         window.addEventListener("DOMMouseScroll", this.MouseWheelHandler, true);
         // Mobile
-        window.addEventListener("touchstart", this.touchStart);
-        window.addEventListener("touchmove", this.touchMove);
-        window.addEventListener("touchend", this.touchEnd);
+        stickyWindow.addEventListener("touchstart", this.touchStart, false);
+        stickyWindow.addEventListener("touchmove", this.touchMove, false);
+        stickyWindow.addEventListener("touchend", this.touchEnd, false);
       }
       // IE 6/7/8
       else window.attachEvent("onmousewheel", this.MouseWheelHandler);
@@ -67,9 +71,9 @@ class App extends Component {
       window.removeEventListener("mousewheel", this.MouseWheelHandler, true);
       window.removeEventListener("DOMMouseScroll", this.MouseWheelHandler, true);
       // Mobile
-      window.removeEventListener("touchstart", this.touchStart);
-      window.removeEventListener("touchmove", this.touchMove);
-      window.removeEventListener("touchend", this.touchEnd);
+      stickyWindow.removeEventListener("touchstart", this.touchStart, false);
+      stickyWindow.removeEventListener("touchmove", this.touchMove, false);
+      stickyWindow.removeEventListener("touchend", this.touchEnd, false);
     }
   }
 
@@ -171,6 +175,7 @@ class App extends Component {
       this.setState(
         {locked: true}
       )
+      console.log("LOCKED!")
       this.disableScroll();
     } 
     if (this.state.scroll < 48 || this.state.scroll > 55) {
@@ -191,11 +196,16 @@ class App extends Component {
     // if (event.originalEvent.touches) { 
     //   event = event.originalEvent.touches[0];
     // }
+
+    console.log("TOUCH START INIT")
+    console.log(event)
   
     // where in the viewport was touched
     this.setState({
       dragStart: event.clientY
     })
+
+    // console.log(this.state.dragStart);
     // make sure we're dealing with a slide
     // target = slides.eq(currentSlideIndex)[0];	
   
@@ -239,6 +249,7 @@ class App extends Component {
     // }
   
     // Don't drag element. This is important.
+    event.preventDefault();
     return false;
   }
 
@@ -283,7 +294,7 @@ class App extends Component {
             <Phone scroll={this.state.scroll} active={this.state.active} />
           </div>
         </div>
-        <ParticleWrapper/>
+        {/* <ParticleWrapper/> */}
         <footer></footer>
       </div>
     );
