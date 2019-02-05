@@ -1,9 +1,9 @@
 {
-  "main.css": "/frame-react-home/static/css/main.53ba602c.chunk.css",
-  "main.js": "/frame-react-home/static/js/main.10c334cc.chunk.js",
-  "main.js.map": "/frame-react-home/static/js/main.10c334cc.chunk.js.map",
-  "static/js/1.79ac1a1b.chunk.js": "/frame-react-home/static/js/1.79ac1a1b.chunk.js",
-  "static/js/1.79ac1a1b.chunk.js.map": "/frame-react-home/static/js/1.79ac1a1b.chunk.js.map",
+  "main.css": "/frame-react-home/static/css/main.92e6a398.chunk.css",
+  "main.js": "/frame-react-home/static/js/main.7ee7f412.chunk.js",
+  "main.js.map": "/frame-react-home/static/js/main.7ee7f412.chunk.js.map",
+  "static/js/1.d3a22ad4.chunk.js": "/frame-react-home/static/js/1.d3a22ad4.chunk.js",
+  "static/js/1.d3a22ad4.chunk.js.map": "/frame-react-home/static/js/1.d3a22ad4.chunk.js.map",
   "runtime~main.js": "/frame-react-home/static/js/runtime~main.c1caec55.js",
   "runtime~main.js.map": "/frame-react-home/static/js/runtime~main.c1caec55.js.map",
   "static/media/cal.png": "/frame-react-home/static/media/cal.9a7ecac4.png",
@@ -17,8 +17,8 @@
   "static/media/text.png": "/frame-react-home/static/media/text.41ff2648.png",
   "static/media/index.css": "/frame-react-home/static/media/6f6ccb4c.dac30a96.png",
   "static/media/whiteLogo.png": "/frame-react-home/static/media/whiteLogo.8ade99bc.png",
-  "static/css/main.53ba602c.chunk.css.map": "/frame-react-home/static/css/main.53ba602c.chunk.css.map",
+  "static/css/main.92e6a398.chunk.css.map": "/frame-react-home/static/css/main.92e6a398.chunk.css.map",
   "index.html": "/frame-react-home/index.html",
-  "precache-manifest.4fcec9659ff7c6f1f61ce700926d1cee.js": "/frame-react-home/precache-manifest.4fcec9659ff7c6f1f61ce700926d1cee.js",
+  "precache-manifest.cac0646b01d87db5be581046cd0f516c.js": "/frame-react-home/precache-manifest.cac0646b01d87db5be581046cd0f516c.js",
   "service-worker.js": "/frame-react-home/service-worker.js"
 }
