@@ -1,7 +1,7 @@
 {
-  "main.css": "/frame-react-home/static/css/main.58898a3b.chunk.css",
-  "main.js": "/frame-react-home/static/js/main.e29c8980.chunk.js",
-  "main.js.map": "/frame-react-home/static/js/main.e29c8980.chunk.js.map",
+  "main.css": "/frame-react-home/static/css/main.c428126f.chunk.css",
+  "main.js": "/frame-react-home/static/js/main.c669084b.chunk.js",
+  "main.js.map": "/frame-react-home/static/js/main.c669084b.chunk.js.map",
   "static/js/1.15649abb.chunk.js": "/frame-react-home/static/js/1.15649abb.chunk.js",
   "static/js/1.15649abb.chunk.js.map": "/frame-react-home/static/js/1.15649abb.chunk.js.map",
   "runtime~main.js": "/frame-react-home/static/js/runtime~main.c1caec55.js",
@@ -19,8 +19,8 @@
   "static/media/RP4.mp4": "/frame-react-home/static/media/RP4.4906489a.mp4",
   "static/media/text.png": "/frame-react-home/static/media/text.41ff2648.png",
   "static/media/Twitter_Logo_Blue.png": "/frame-react-home/static/media/Twitter_Logo_Blue.227ddc9d.png",
-  "static/css/main.58898a3b.chunk.css.map": "/frame-react-home/static/css/main.58898a3b.chunk.css.map",
+  "static/css/main.c428126f.chunk.css.map": "/frame-react-home/static/css/main.c428126f.chunk.css.map",
   "index.html": "/frame-react-home/index.html",
-  "precache-manifest.be40fbf1d0b576754a53e1d3ece10b35.js": "/frame-react-home/precache-manifest.be40fbf1d0b576754a53e1d3ece10b35.js",
+  "precache-manifest.b6b23a90924aff13ddd701e4498f7f48.js": "/frame-react-home/precache-manifest.b6b23a90924aff13ddd701e4498f7f48.js",
   "service-worker.js": "/frame-react-home/service-worker.js"
 }
