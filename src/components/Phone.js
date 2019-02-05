@@ -12,15 +12,12 @@ const Phone = (props) => {
     let phoneStyles = "phone";
     let videos = [intro, vid2, vid3]
 
-
-    if (props.scroll > 14) {
-        phoneStyles = "phone fadeInSwipeLeft"
-    }
+    phoneStyles = "phone fadeInSwipeLeft"
 
     return(
         <div className={phoneStyles}>
             <img className="phoneImg" src={iPhone} alt="iPhone graphic" width="60%"/>
-            <video className="demoVid" alt="introVideo" width="60%" autoPlay muted src={videos[props.active]} type="video/mp4">
+            <video className="demoVid" alt="introVideo" width="57%" autoPlay muted playsinline src={videos[props.active - 1]} type="video/mp4">
             </video>
         </div>
     )

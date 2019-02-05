@@ -1,4 +1,4 @@
-.featureSection {
+/* .featureSection {
     overflow: hidden;
     width: 100%;
     position: absolute;
@@ -6,10 +6,7 @@
     left: 0;
     height: 100vh;
     opacity: 0;
-}
-
-.featureSection.active {
-}
+} */
 
 .featureHeader {
     margin: 0 auto;
@@ -52,7 +49,7 @@
 
 .phone {
     position: absolute;
-    top: 170px;
+    top: 200px;
     opacity: 0;
     /* transform: translateX(-100%); */
 }
@@ -67,7 +64,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    margin-top:1em;
+    margin-top:2.5em;
 }
 
 .fadeIn {

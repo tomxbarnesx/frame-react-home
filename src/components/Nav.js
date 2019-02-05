@@ -69,7 +69,7 @@ class Nav extends Component {
                 <div className={top}></div>
                 <div className={middle}></div>
                 <ul id="menu" style={menu}>
-                    <Link to="/"><li>Home</li></Link> 
+                    <Link to="/frame-react-home"><li>Home</li></Link> 
                     <Link to="/sign-up"><li>Sign up</li></Link>
                     <Link to="/log-in"><li>Log in</li></Link> 
                 </ul>

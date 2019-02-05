@@ -2,9 +2,18 @@ import React from 'react';
 import whiteLogo from '../images/whiteLogo.png';
 import downArrow from '../images/downArrow.png';
 
-const Landing = () => {
+const Landing = (props) => {
+
+    let slideStyle;
+    
+    if (props.active === 0){
+        slideStyle = "slide active"
+    } else {
+        slideStyle = "slide"
+    }
+
     return (
-    <div className="landingContent">
+    <div className={slideStyle}>
         {/* <nav className="topNav">
             <div className="navItem"><strong>ABOUT</strong></div>
             <div className="navItem"><strong>CONTACT</strong></div>    
