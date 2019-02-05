@@ -32,7 +32,7 @@ const Feature = (props) => {
                         <img src={icons[props.active - 1]} width="70px" alt="Deeply reported icon. Search Document by Juicy Fish from the Noun Project"/>
                     </div>
                     <div className="featureHeaderText">
-                        <h2 className="featureTitle">{props.info.header}</h2>
+                        <h3 className="featureTitle">{props.info.header}</h3>
                     </div>
                 </div>
                 <div className={subStyles}>

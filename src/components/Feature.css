@@ -14,9 +14,6 @@
     align-items: center;
     display: flex;
     width: 85%;
-    /* opacity: 0; */
-    /* transform: translateX(-100%); */
-    /* opacity: 0; */
 }
 
 .featureHeader.reverse {
@@ -40,7 +37,7 @@
 }
 
 .featureSub {
-    width: 88%;
+    width: 85%;
     text-align: left;
     font-size: 81%;
     margin: 0 auto;
@@ -54,6 +51,14 @@
     top: 200px;
     opacity: 0;
     /* transform: translateX(-100%); */
+}
+
+.phoneMute {
+    position: absolute;
+    top: 10%;
+    right: 30%;
+    filter: invert(100%);
+    z-index: 30;
 }
 
 .demoVid {

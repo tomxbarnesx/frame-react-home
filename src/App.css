@@ -68,31 +68,44 @@
   /* margin-top: 6em; */
 }
 
-.landingButtons a {
-  text-decoration: none;
-
-}
-
 .signUpButton {
-  color:rgb(48, 59, 75);
-  background-color: white;
+  color: white;
   margin: 25px auto;
-  border-radius: .2em;
+  /* border-radius: .3em; */
   width: 13em;
   height: 3em;
-  /* border: 4px solid rgb(42, 53, 68); */
+  border: 4px solid white;
 }
 
-.signUpButton::after {
+.signUpButton a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.landingLink {
+  position: relative;
+}
+
+.landingLink:after {
   content: '';
   display: block;
-  position: relative;
-  top: -48px;
-  left: -6px;
-  width: calc(100% + 6px);
-  height: calc(100% + 6px);
-  border: 3px solid white;
-  border-radius: .5em;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  transition: all .4s;
+  background-color: white;
+  z-index:-1;
+}
+.landingLink:hover:after {
+  width: 100%;
+}
+
+.landingLink:hover {
+  color: #4C607A;
 }
 
 .downPoint {
@@ -121,7 +134,7 @@
 
 .featureSection {
   position: absolute;
-  top: 47px;
+  top: 37px;
   opacity: 0;
 }
 
@@ -167,6 +180,17 @@ footer {
 .footerInfoContainer {
   position: absolute;
   top: 47px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.FLogoContainer {
+  width: 6em;
+  margin-top: 1em;
+  /* position: absolute; */
+  /* transform: translate(50%); */
 }
 
 .buttonStyle {
@@ -183,10 +207,48 @@ footer {
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: .25rem;
+  /* border-radius: .25rem; */
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 /* footer .buttonStyle {
   margin-top: 15px;
 } */
+
+
+.landingLink.ender {
+  z-index: 9;
+}
+.landingLink.ender:hover {
+  z-index: 9;
+  color: black;
+}
+
+.signUpButton.end {
+  width: 7em;
+  height: 2em;
+  vertical-align: middle;
+}
+
+.signUpButton.end strong {
+  vertical-align: middle;
+}
+
+.socialContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 9em;
+}
+
+.socialIcon {
+  width: 1.8em;
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
+.testimonial {
+  width: 70%;
+  text-align: left;
+}

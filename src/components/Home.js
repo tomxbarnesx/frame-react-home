@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import F from '../images/F.png';
+import FB from '../images/flogo-HexRBG-Wht-144.png';
+import Twitter from '../images/Twitter_Logo_Blue.png';
+import Instagram from '../images/insta.png';
+
 import featureData from '../data/features';
 import Landing from './Landing';
 import Feature from './Feature';
@@ -146,35 +151,6 @@ class Home extends Component {
         this.setState({delta: 0})
     }
     
-    // handleScroll() {
-    //     const scrollHeight = document.body.scrollHeight;
-    //     const windowHeight = window.innerHeight
-    //     const scrollTop = window.scrollY;
-    //     let scrollAmount = (scrollTop / (scrollHeight-windowHeight)) * 100; // get amount scrolled (in %)
-    //     // this.disableScroll();
-
-    //     // this.setState(prevState => {
-    //     //   return {
-    //     //     scroll: scrollAmount
-    //     //   }
-    //     // })
-    
-    //     // if (this.state.scroll > 44 && this.state.scroll < 50){
-    //     //     this.setState(
-    //     //         {locked: true}
-    //     //     )
-    //     //     console.log("LOCKED!")
-    //     //     this.disableScroll();
-    //     // } 
-    //     // if (this.state.scroll < 48 || this.state.scroll > 55) {
-    //     //     this.setState(
-    //     //         {locked: false}
-    //     //     )
-    //     //     this.disableScroll();
-    //     // }    
-    //     // console.log('STATE SCROLL:', this.state.scroll);
-    // }
-    
       //MOBILE SCRIPTS
     
     touchStart(event) {
@@ -218,10 +194,6 @@ class Home extends Component {
         this.setState({
             dragStart: null
         });
-        // target.classList.remove('no-animation');
-        // if (previousTarget) { 
-        //   previousTarget.classList.remove('no-animation'); 
-        // }
         
         if (this.state.percentage >= dragThreshold) {
             this.nextSlide();
@@ -266,9 +238,20 @@ class Home extends Component {
                 {/* <ParticleWrapper/> */}
                 <footer className={footStyles}>
                     <div className="footerInfoContainer">
-                        <h2>Experience the future of the magazine.</h2>
+                        <h2>Experience the future<br/>of the magazine.</h2>
                         <p>Sign up for free our inaugural month.</p>
-                        <Link to="/sign-up"><button className="buttonStyle">Sign up</button></Link>
+                        <div className="testimonial">
+                            <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</em><br/>— Steve Jobs</p>
+                        </div>
+                        <div className="signUpButton end"><Link to="/sign-up" className="landingLink ender"><strong>SIGN UP</strong></Link></div>
+                        <div className="FLogoContainer">
+                            <img src={F} width="100%" alt="Frame F logo"/>
+                        </div>
+                        <div className="socialContainer">
+                            <div className="socialIcon"><a href="https://facebook.com/exploreframe"><img src={FB} width="100%" /></a></div>
+                            <div className="socialIcon"><a href="https://twitter.com/exploreframe"><img src={Twitter} width="100%"/></a></div>
+                            <div className="socialIcon"><a href="https://instagram.com/exploreframe"><img src={Instagram} width="100%"/></a></div>
+                        </div>
                     </div>
                 </footer>
             </div>

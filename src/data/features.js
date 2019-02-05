@@ -1,15 +1,15 @@
 const featureData = [
     {
         id: 1,
-        header: "Deeply reported narratives",
-        sub: "Every week we publish a riveting, human story that exposes the underlying forces behind the news.",
+        header: "Deeply reported narrative journalism",
+        sub: "Every week we publish a riveting, human story exposing the underlying forces behind the news.",
         vid: '../video/Fentanyl_Intro.mp4',
         position: "left",
     },
     {
         id: 2,
         header: "Immersive, interactive",
-        sub: "Interactive features allow users to go on tangents and feel a greater sense of agency within the story.",
+        sub: "Interactive features allow users to feel a greater sense of agency within the story.",
         vid: "../video/RP5.mp4",
         position: 'right',
     },
