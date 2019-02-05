@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "b932079b388c7bd613c6541cc3223db6",
-    "url": "/frame-react-home/static/media/interactive.b932079b.png"
+    "revision": "c998808ccab1733b675602c37f1d5cac",
+    "url": "/frame-react-home/static/media/report.c998808c.png"
   },
   {
-    "revision": "7ee7f412aefe26258418",
-    "url": "/frame-react-home/static/css/main.92e6a398.chunk.css"
+    "revision": "3ef1815819d7fa37ed5c",
+    "url": "/frame-react-home/static/css/main.744f4cfc.chunk.css"
   },
   {
-    "revision": "d3a22ad4af8b60109f0e",
-    "url": "/frame-react-home/static/js/1.d3a22ad4.chunk.js"
+    "revision": "35a4bf2628d12617ab6b",
+    "url": "/frame-react-home/static/js/1.35a4bf26.chunk.js"
   },
   {
     "revision": "c1caec5508f19016b6ae",
@@ -20,6 +20,10 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/cal.9a7ecac4.png"
   },
   {
+    "revision": "227ddc9ddeb6fc9f29f994ba845a6c2c",
+    "url": "/frame-react-home/static/media/Twitter_Logo_Blue.227ddc9d.png"
+  },
+  {
     "revision": "8ade99bcd9ebfd0142fe7dff9b9daf47",
     "url": "/frame-react-home/static/media/whiteLogo.8ade99bc.png"
   },
@@ -28,12 +32,12 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/downArrow.4fe9c605.png"
   },
   {
-    "revision": "c998808ccab1733b675602c37f1d5cac",
-    "url": "/frame-react-home/static/media/report.c998808c.png"
+    "revision": "3ef1815819d7fa37ed5c",
+    "url": "/frame-react-home/static/js/main.3ef18158.chunk.js"
   },
   {
-    "revision": "7ee7f412aefe26258418",
-    "url": "/frame-react-home/static/js/main.7ee7f412.chunk.js"
+    "revision": "b932079b388c7bd613c6541cc3223db6",
+    "url": "/frame-react-home/static/media/interactive.b932079b.png"
   },
   {
     "revision": "b8b07822974ab64b4efcdcf9a9435089",
@@ -60,7 +64,7 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/6f6ccb4c.dac30a96.png"
   },
   {
-    "revision": "7c5793cdd372e7d131934f04907ce543",
+    "revision": "5235861803e85eb41ae5b1800a077fda",
     "url": "/frame-react-home/index.html"
   }
 ];
