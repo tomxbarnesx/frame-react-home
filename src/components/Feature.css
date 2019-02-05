@@ -41,6 +41,8 @@
 
 .featureSub {
     width: 88%;
+    text-align: left;
+    font-size: 81%;
     margin: 0 auto;
     margin-top: -.85rem;
     /* transform: translateX(-100%); */
@@ -54,17 +56,13 @@
     /* transform: translateX(-100%); */
 }
 
-/* .phoneImg {
-    z-index: 9999;
-} */
-
 .demoVid {
     position: absolute;
     z-index: -1;
     left: 0;
     right: 0;
     margin: auto;
-    margin-top:2.5em;
+    margin-top: 1.95em;
 }
 
 .fadeIn {

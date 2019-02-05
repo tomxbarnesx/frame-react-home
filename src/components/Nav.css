@@ -10,10 +10,11 @@
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
+	z-index: 20;
 }
 
 .reveal {
-	opacity: .95;
+	opacity: 1;
 	display: block;
 	pointer-events: auto;
 	visibility: visible;
@@ -46,7 +47,7 @@
 
 #menu {
 	position: fixed;
-	left: calc(100% - 292px);
+	left: 2em;
 	top: 10px;
 	color: black;
 	display: none;

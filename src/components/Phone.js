@@ -12,12 +12,18 @@ const Phone = (props) => {
     let phoneStyles = "phone";
     let videos = [intro, vid2, vid3]
 
-    phoneStyles = "phone fadeInSwipeLeft"
+    if (props.active === 4) {
+        setTimeout(() => {
+            phoneStyles = "phone"
+        }, 1000)
+    } else {
+        phoneStyles = "phone fadeInSwipeLeft"
+    }
 
     return(
         <div className={phoneStyles}>
-            <img className="phoneImg" src={iPhone} alt="iPhone graphic" width="60%"/>
-            <video className="demoVid" alt="introVideo" width="57%" autoPlay muted playsinline src={videos[props.active - 1]} type="video/mp4">
+            <img className="phoneImg" src={iPhone} alt="iPhone graphic" width="50%"/>
+            <video className="demoVid" alt="introVideo" width="47%" autoPlay muted playsInline src={videos[props.active - 1]} type="video/mp4">
             </video>
         </div>
     )

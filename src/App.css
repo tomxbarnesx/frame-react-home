@@ -63,7 +63,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 400px;
+  top: 340px;
   margin: auto;
   /* margin-top: 6em; */
 }
@@ -142,6 +142,11 @@ footer {
   /* padding: 50px 50px 0px 50px; */
   /* height: 90vh; */
   background: black;
+}
+
+.footerInfoContainer {
+  position: absolute;
+  top: 47px;
 }
 
 .buttonStyle {

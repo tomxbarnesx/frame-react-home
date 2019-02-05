@@ -266,9 +266,11 @@ class Home extends Component {
                 </div>
                 {/* <ParticleWrapper/> */}
                 <footer className={footStyles}>
-                    <h2>Experience the future of the magazine.</h2>
-                    <p>Sign up for free our inaugural month.</p>
-                    <Link to="/sign-up"><button className="buttonStyle">Sign up</button></Link>
+                    <div className="footerInfoContainer">
+                        <h2>Experience the future of the magazine.</h2>
+                        <p>Sign up for free our inaugural month.</p>
+                        <Link to="/sign-up"><button className="buttonStyle">Sign up</button></Link>
+                    </div>
                 </footer>
             </div>
         );
