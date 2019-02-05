@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "c998808ccab1733b675602c37f1d5cac",
-    "url": "/frame-react-home/static/media/report.c998808c.png"
+    "revision": "b932079b388c7bd613c6541cc3223db6",
+    "url": "/frame-react-home/static/media/interactive.b932079b.png"
   },
   {
-    "revision": "11cf12f9b6ec257eea9e",
-    "url": "/frame-react-home/static/css/main.520c8199.chunk.css"
+    "revision": "933085bc6e8dc4bf73a6",
+    "url": "/frame-react-home/static/css/main.ed6b688c.chunk.css"
   },
   {
-    "revision": "35a4bf2628d12617ab6b",
-    "url": "/frame-react-home/static/js/1.35a4bf26.chunk.js"
+    "revision": "15649abbfa7102b35db7",
+    "url": "/frame-react-home/static/js/1.15649abb.chunk.js"
   },
   {
     "revision": "c1caec5508f19016b6ae",
@@ -32,16 +32,20 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/downArrow.4fe9c605.png"
   },
   {
-    "revision": "11cf12f9b6ec257eea9e",
-    "url": "/frame-react-home/static/js/main.11cf12f9.chunk.js"
+    "revision": "c998808ccab1733b675602c37f1d5cac",
+    "url": "/frame-react-home/static/media/report.c998808c.png"
   },
   {
-    "revision": "b932079b388c7bd613c6541cc3223db6",
-    "url": "/frame-react-home/static/media/interactive.b932079b.png"
+    "revision": "933085bc6e8dc4bf73a6",
+    "url": "/frame-react-home/static/js/main.933085bc.chunk.js"
   },
   {
     "revision": "b8b07822974ab64b4efcdcf9a9435089",
     "url": "/frame-react-home/static/media/iPhoneBlankScreen.b8b07822.png"
+  },
+  {
+    "revision": "6fd2a5e641ab1b7f34e306a24065cebe",
+    "url": "/frame-react-home/static/media/loud.6fd2a5e6.png"
   },
   {
     "revision": "0c330e58a37e137756c11cdf74ba2094",
@@ -64,7 +68,7 @@ self.__precacheManifest = [
     "url": "/frame-react-home/static/media/6f6ccb4c.dac30a96.png"
   },
   {
-    "revision": "ea512262b41af4cd39a38f5a62a1ff60",
+    "revision": "c71d3cda53bedc0b9c9aa26675bc491b",
     "url": "/frame-react-home/index.html"
   }
 ];
