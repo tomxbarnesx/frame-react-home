@@ -27,14 +27,14 @@
 	width: 70px;
 	height: 100px;
 	overflow: auto;
-    left: calc(100% - 70px);
+    left: calc(100% - 60px);
 	top: 2px;
 	z-index: 20;
 }
 
 .top, .middle{
 	position: absolute;
-	width: 50px;
+	width: 40px;
 	height: 4px;
 	background-color: white;
 	transition: all 350ms ease-in-out;

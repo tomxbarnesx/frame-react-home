@@ -84,7 +84,6 @@ class Home extends Component {
       }
     
     MouseWheelHandler(e) {
-        var e = window.event || e; // old IE support
         let scrollStrength = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)))
         let scrollThreshold = 35;
         console.log('DELTA', this.state.delta)
