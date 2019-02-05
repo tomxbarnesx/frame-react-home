@@ -1,7 +1,7 @@
 {
-  "main.css": "/frame-react-home/static/css/main.554163f4.chunk.css",
-  "main.js": "/frame-react-home/static/js/main.0522b098.chunk.js",
-  "main.js.map": "/frame-react-home/static/js/main.0522b098.chunk.js.map",
+  "main.css": "/frame-react-home/static/css/main.43439144.chunk.css",
+  "main.js": "/frame-react-home/static/js/main.c9bfa54f.chunk.js",
+  "main.js.map": "/frame-react-home/static/js/main.c9bfa54f.chunk.js.map",
   "static/js/1.79ac1a1b.chunk.js": "/frame-react-home/static/js/1.79ac1a1b.chunk.js",
   "static/js/1.79ac1a1b.chunk.js.map": "/frame-react-home/static/js/1.79ac1a1b.chunk.js.map",
   "runtime~main.js": "/frame-react-home/static/js/runtime~main.c1caec55.js",
@@ -17,8 +17,8 @@
   "static/media/text.png": "/frame-react-home/static/media/text.41ff2648.png",
   "static/media/index.css": "/frame-react-home/static/media/6f6ccb4c.dac30a96.png",
   "static/media/whiteLogo.png": "/frame-react-home/static/media/whiteLogo.8ade99bc.png",
-  "static/css/main.554163f4.chunk.css.map": "/frame-react-home/static/css/main.554163f4.chunk.css.map",
+  "static/css/main.43439144.chunk.css.map": "/frame-react-home/static/css/main.43439144.chunk.css.map",
   "index.html": "/frame-react-home/index.html",
-  "precache-manifest.d4a1cef6040f9278c13d70c41f771be6.js": "/frame-react-home/precache-manifest.d4a1cef6040f9278c13d70c41f771be6.js",
+  "precache-manifest.833acb44d036628ba780c1379157990d.js": "/frame-react-home/precache-manifest.833acb44d036628ba780c1379157990d.js",
   "service-worker.js": "/frame-react-home/service-worker.js"
 }
